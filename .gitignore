@@ -14,5 +14,9 @@
 # Avoid your project being littered with annoying .DS_Store files!
 .DS_Store
 
+node_modules/
 *md
 env.js
+.cache
+.parcel-cache
+dist/
