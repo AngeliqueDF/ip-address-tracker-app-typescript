@@ -1,34 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | IP Address Tracker</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
+
 <body>
 
-  IP Address Tracker
+  <header>
+    <h1>IP Address Tracker</h1>
+  </header>
 
-  Search for any IP address or domain
+  <main>
 
-  IP Address
-  Location
-  Timezone
-    UTC <!-- add offset value dynamically using the API -->
-  ISP
-  
+    <div id="app">
+      <form class="search">
+        <input id="search-input" name="searchedAddress" type="text" placeholder="Search for any IP address or domain">
+        <input id="search-submit" value="" type="submit">
+      </form>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>IP Address</th>
+            <!-- <td id="ip-address">192.212.174.101</td> -->
+            <td id="ip-address">192.212.174.101</td>
+          </tr>
+          <tr>
+            <th>Location</th>
+            <td><span id="city">Brooklyn</span>, <span id="region">NY</span> <span id="postal-code">10001</span></td>
+          </tr>
+          <tr>
+            <th>Timezone</th>
+            <td>UTC <span id="timezone">-05:00</span></td>
+          </tr>
+          <tr>
+            <th>ISP</th>
+            <td id="isp">SpaceX Starlink</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- add offset value dynamically using the API -->
+    <div id="map"></div>
+
+  </main>
+
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://adf.dev">Angélique D. Faye</a>.
   </div>
 </body>
+
 </html>
