@@ -2,8 +2,10 @@ class AddressMapControl {
 	// The svg icon which marks the address location
 	#marker;
 
-	// The current location to display, received from IPIFY (which initializes it at the user's location)
-	latLng;
+	/**
+	 * The current location to display, received from IPIFY (which initializes it at the user's location)
+	 */
+	#latLng;
 
 	// The map displayed in div#map
 	#map;
@@ -20,8 +22,8 @@ class AddressMapControl {
 		iconAnchor: [12, 40],
 	});
 
-	constructor(latLng = [0, 0]) {
-		this.latLng = latLng;
+	constructor(newLatLng = [0, 0]) {
+		this.#latLng = newLatLng;
 
 		this.displayMap();
 
@@ -33,7 +35,7 @@ class AddressMapControl {
 	// Puts the Leaflet map in the DOM
 	displayMap() {
 		this.#map = L.map("map", {
-			center: this.latLng,
+			center: this.#latLng,
 			zoom: this.#ZOOM,
 			zoomControl: false,
 		});
