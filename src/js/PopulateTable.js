@@ -9,6 +9,10 @@ class PopulateTable {
 			isp,
 			location: { city, region, postalCode, timezone },
 		} = data;
+
+		/**
+		 * Maps each HTML element to the response data
+		 */
 		const elements = [
 			{ selector: "ip-address", data: ip },
 			{ selector: "isp", data: isp },
@@ -18,6 +22,11 @@ class PopulateTable {
 			{ selector: "timezone", data: timezone },
 		];
 
+		/**
+		 * Selects an element in the DOM and inserts matching data into it.
+		 * @param {*} idSelector - HTML element selected by its id
+		 * @param {*} elementData - Data from the API response
+		 */
 		const displayDataInDOM = (idSelector, elementData) => {
 			const element = document.getElementById(idSelector);
 			element.textContent = elementData;
