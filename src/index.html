@@ -1,69 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+		<title>Frontend Mentor | IP Address Tracker</title>
 
-  <title>Frontend Mentor | IP Address Tracker</title>
+		<link rel="stylesheet" href="./css/reset.css" />
+		<link rel="stylesheet" href="./css/main.css" />
 
-  <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/main.css">
+		<link rel="stylesheet" href="./../node_modules/leaflet/dist/leaflet.css" />
+		<script src="./../node_modules/leaflet/dist/leaflet.js"></script>
+	</head>
 
-  <link rel="stylesheet" href="./../node_modules/leaflet/dist/leaflet.css">
-  <script src="./../node_modules/leaflet/dist/leaflet.js"></script>
-</head>
+	<body>
+		<header>
+			<h1>IP Address Tracker</h1>
+		</header>
 
-<body>
+		<main>
+			<div id="app">
+				<form class="search">
+					<input
+						id="search-input"
+						name="searchedAddress"
+						type="search"
+						placeholder="Search for any IP address or domain"
+					/>
+					<input id="search-submit" value="" type="submit" />
+					<!-- <input type="search" id="search-submit" /> -->
+				</form>
 
-  <header>
-    <h1>IP Address Tracker</h1>
-  </header>
+				<table>
+					<tbody>
+						<tr>
+							<th>IP Address</th>
+							<!-- <td id="ip-address">192.212.174.101</td> -->
+							<td id="ip-address">192.212.174.101</td>
+						</tr>
+						<tr>
+							<th>Location</th>
+							<td>
+								<span id="city">Brooklyn</span>, <span id="region">NY</span>
+								<span id="postal-code">10001</span>
+							</td>
+						</tr>
+						<tr>
+							<th>Timezone</th>
+							<td>UTC <span id="timezone">-05:00</span></td>
+						</tr>
+						<tr>
+							<th>ISP</th>
+							<td id="isp">SpaceX Starlink</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 
-  <main>
+			<!-- add offset value dynamically using the API -->
+			<div id="map"></div>
+		</main>
 
-    <div id="app">
-      <form class="search">
-        <input id="search-input" name="searchedAddress" type="text" placeholder="Search for any IP address or domain">
-        <input id="search-submit" value="" type="submit">
-      </form>
-
-      <table>
-        <tbody>
-          <tr>
-            <th>IP Address</th>
-            <!-- <td id="ip-address">192.212.174.101</td> -->
-            <td id="ip-address">192.212.174.101</td>
-          </tr>
-          <tr>
-            <th>Location</th>
-            <td><span id="city">Brooklyn</span>, <span id="region">NY</span> <span id="postal-code">10001</span></td>
-          </tr>
-          <tr>
-            <th>Timezone</th>
-            <td>UTC <span id="timezone">-05:00</span></td>
-          </tr>
-          <tr>
-            <th>ISP</th>
-            <td id="isp">SpaceX Starlink</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- add offset value dynamically using the API -->
-    <div id="map"></div>
-
-  </main>
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="https://adf.dev">Angélique D. Faye</a>.
-  </div>
-  <script src="./js/app.js" type="module"></script>
-</body>
-
+		<footer>
+			<div class="attribution">
+				Challenge by
+				<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+					>Frontend Mentor</a
+				>. Coded by <a href="https://adf.dev">Angélique D. Faye</a>.
+			</div>
+		</footer>
+		<script src="./js/app.js" type="module"></script>
+	</body>
 </html>

@@ -1,192 +1,220 @@
-body{
-  font-family: 'Rubik', sans-serif;
-  font-size: 18px;
+body {
+	font-family: "Rubik", sans-serif;
+	font-size: 18px;
 }
 
 header {
-  min-height: 35vh;
-  text-align: center;
-  padding: 1rem;
-  background-image: url(./../images/pattern-bg.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+	min-height: 35vh;
+	text-align: center;
+	padding: 1rem;
+	background-image: url(./../images/pattern-bg.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 h1 {
-  font-size: 1.5rem;
-  margin-top: 0.4rem;
-  color: white;
+	font-size: 1.5rem;
+	margin-top: 0.4rem;
+	color: white;
 }
 
 main {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
 }
 
 #app,
 form,
-table{
-  margin: 0;
+table {
+	margin: 0;
 }
 
 #app {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 
-  max-width: 95%;
-  margin: 0 auto;
-  padding: 1rem;
+	max-width: 95%;
+	margin: 0 auto;
+	padding: 1rem;
 
-  text-align: center;
+	text-align: center;
 
-  position: absolute;
-  z-index: 2;
+	position: absolute;
+	z-index: 2;
 
-  top: -41%;
-  left: 0;
-  right: 0;
+	top: -41%;
+	left: 0;
+	right: 0;
 }
 
 form,
 table {
-  border-radius: 18px;
-  background-color: white;
+	border-radius: 18px;
+	background-color: white;
 }
 
 form {
-  margin-bottom: 1rem;
-  min-height: 2rem;
+	margin-bottom: 1rem;
+	min-height: 2rem;
 
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
 }
 
 #search-input {
-  border: 1px solid rgba(0,0,0,0%);
-  padding: 1rem 0 1rem 1rem;
-  border-radius: 18px 0 0 18px;
-  flex-basis: 80%;
+	border: 1px solid rgba(0, 0, 0, 0%);
+	padding: 1rem 0 1rem 1rem;
+	border-radius: 18px 0 0 18px;
+	width: 80%;
 }
 
 #search-submit {
-  border-radius: 0 18px 18px 0;
-  border: none;
-  flex-basis: 20%;
-  background-color: black;
-  background-image: url('./../images/icon-arrow.svg');
-  background-repeat: no-repeat;
-  background-size: 0.7rem;
-  background-position: center;
+	border-radius: 0 18px 18px 0;
+	border: none;
+	width: 20%;
+	background-color: black;
+	background-image: url("./../images/icon-arrow.svg");
+	background-repeat: no-repeat;
+	background-size: 0.7rem;
+	background-position: center;
 }
 
 #search-submit:hover {
-  background-color: grey;
-  cursor: pointer;
+	background-color: grey;
+	cursor: pointer;
 }
 
 table {
-  padding: 1.3rem 1rem 0.5rem;
-  font-size: 1.2em;
+	padding: 1.3rem 1rem 0.5rem;
+	font-size: 1.2em;
 }
 
-tbody, tr {
-  display: flex;
-  flex-direction: column;
+tbody,
+tr {
+	display: flex;
+	flex-direction: column;
 }
 
 tr {
-  margin-bottom: 0.8rem;
+	margin-bottom: 0.8rem;
 }
 
 th {
-  color: grey;
-  text-transform: uppercase;
-  font-size: 0.6rem;
+	color: grey;
+	text-transform: uppercase;
+	font-size: 0.6rem;
 }
 
 td {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 #map {
-  height: 65vh;
-  z-index: 1;
-  position: relative;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  max-width: 100%;
-  background-color: grey;
+	height: 65vh;
+	z-index: 1;
+	position: relative;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	max-width: 100%;
+	background-color: grey;
 }
 
 .attribution {
-  font-size: 11px;
-  text-align: center;
+	font-size: 11px;
+	text-align: center;
 }
 
 .attribution a {
-  color: hsl(228, 45%, 44%);
+	color: hsl(228, 45%, 44%);
 }
 
-@media screen and (min-width: 1440px){
-  header {
-    min-height: 31.25vh;
-    text-align: center;
-    padding: 1rem;
-    background-image: url(./../images/pattern-bg.png);
-    background-size: 110% 110%;
-    background-position: -40px -1px;
-  }
+@media screen and (min-width: 1440px) {
+	header {
+		min-height: 31.25vh;
+		text-align: center;
+		padding: 1rem;
+		background-image: url(./../images/pattern-bg.png);
+		/* background-size: 110% 110%;
+    background-position: -40px -1px; */
+		background-size: cover;
+		background-position: center;
+	}
 
-  h1 {
-    margin-top: 1rem;
-    font-size: 1.7rem;
-  }
+	h1 {
+		margin-top: 0.5rem;
+		font-size: 1.8rem;
+	}
 
-  .search {
-    width: 45%;
-    margin: 0rem auto 4rem;
-  }
+	.search,
+	#search-input,
+	table {
+		border-radius: 14px;
+	}
+	#search-submit {
+		border-radius: 0 14px 14px 0;
+	}
 
-  #search-input {
-    flex-basis: 100%;
-  }
+	.search {
+		height: 3.2rem;
+		width: 45%;
+		margin: 0rem auto 2.5rem;
+	}
 
-  #search-submit {
-    flex-basis: 64px;
-    padding: 2rem 1rem 0.5rem;
-  }
+	#search-input {
+		flex-basis: 90%;
+	}
 
-  table {
-    width: 80%;
-    margin: 0 auto;
-  }
+	#search-submit {
+		flex-basis: 10%;
+		padding: 2rem 1rem 0.5rem;
+	}
 
-  tbody {
-    flex-direction: row;
-  }
+	#app {
+		top: -33%;
+	}
 
-  tr {
-    font-size: 1.3rem;
-    padding-right: 4rem;
-    padding-left: 1.5rem;
-    width: 21%;
-    text-align: left;
-    position: relative;
-  }
+	table {
+		width: 84%;
+		margin: 0 auto;
+		padding: 1.7rem 0 1rem;
+	}
 
-  tr:not(tr:last-of-type):after {
-    content: "";
-    height: 72%;
-    width: 1px;
-    background-color: lightgrey;
-    position: absolute;
-    right: 0;
-    bottom: 12px;
-  }
+	tbody {
+		flex-direction: row;
+		justify-content: space-around;
+	}
 
+	th {
+		font-size: 0.7rem;
+		letter-spacing: 2px;
+		margin-bottom: 0.4rem;
+	}
+
+	tr {
+		font-size: 1.5rem;
+		padding-right: 3.2rem;
+		margin: 0;
+		width: 21%;
+		text-align: left;
+		position: relative;
+	}
+
+	tr:not(tr:last-of-type):after {
+		content: "";
+		height: 72%;
+		width: 1px;
+		background-color: lightgrey;
+		position: absolute;
+		right: 0;
+		bottom: 12px;
+	}
+
+	#map {
+		min-height: 68.5vh;
+	}
 }
