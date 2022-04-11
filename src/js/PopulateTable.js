@@ -1,5 +1,9 @@
 class PopulateTable {
-	displayFoundInfo(data) {
+	/**
+	 * Populates the table with data received from the APIs.
+	 * @param {Object} data
+	 */
+	populateTable(data) {
 		const {
 			ip,
 			isp,
