@@ -15,7 +15,6 @@
 .DS_Store
 
 node_modules/
-*md
 env.js
 .cache
 .parcel-cache
