@@ -19,7 +19,7 @@ class IpAddressLocator {
 			const data = await response.json();
 
 			if (response.status === 200) {
-				return { status: response.status, data: data };
+				return data;
 			} else if (response.status === 422) {
 				alert(this.#CANT_PROCESS_REQUEST_MESSAGE);
 			}
