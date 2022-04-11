@@ -50,10 +50,13 @@ class AddressMapControl {
 		this.#marker.setLatLng(latLngDisplayed);
 	}
 
-	// Centers centers the map on the new location and moves the marker
-	displayAddress(latLngDisplayed) {
-		this.#map.setView(latLngDisplayed, this.#ZOOM);
-		this.#displayMarker(latLngDisplayed);
+	/**
+	 * Centers centers the map on the new location and moves the marker.
+	 * @param {*} newLatLng
+	 */
+	updateMap(newLatLng) {
+		this.#map.setView(newLatLng, this.#ZOOM);
+		this.#displayMarker(newLatLng);
 	}
 }
 
