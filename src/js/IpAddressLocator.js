@@ -15,7 +15,7 @@ class IpAddressLocator {
 	/**
 	 * Displayed when requests limit was reached.
 	 */
-	#REQUESTS_FORBIDDEN = "Sorry, we can't send more requests at this time!";
+	#REQUESTS_FORBIDDEN = "Sorry, we can't locate IP addresses at the moment!";
 
 	/**
 	 * Locates the IP address search.
