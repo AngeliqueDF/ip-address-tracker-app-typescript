@@ -9,12 +9,11 @@ window.addEventListener("DOMContentLoaded", async () => {
 	 * @param {*} data
 	 */
 	const displayData = (data) => {
+		console.log(data);
 		if (data) {
-			const {
-				location: { lat, lng },
-			} = data;
+			const { latitude, longitude } = data;
 			infoDisplay.populateTable(data);
-			appMap.updateMap([lat, lng]);
+			appMap.updateMap([latitude, longitude]);
 		}
 	};
 

@@ -4,11 +4,7 @@ class PopulateTable {
 	 * @param {Object} data
 	 */
 	populateTable(data) {
-		const {
-			ip,
-			isp,
-			location: { city, region, postalCode, timezone },
-		} = data;
+		const { ip, isp, city, district, zipcode, time_zone } = data;
 
 		/**
 		 * Maps each HTML element to the response data
@@ -17,9 +13,12 @@ class PopulateTable {
 			{ selector: "ip-address", data: ip },
 			{ selector: "isp", data: isp },
 			{ selector: "city", data: city },
-			{ selector: "region", data: region },
-			{ selector: "postal-code", data: postalCode },
-			{ selector: "timezone", data: timezone },
+			{ selector: "region", data: district },
+			{ selector: "postal-code", data: zipcode },
+			{
+				selector: "timezone",
+				data: `${time_zone.offset >= 0 ? "+" : ""}${time_zone.offset}`,
+			},
 		];
 
 		/**

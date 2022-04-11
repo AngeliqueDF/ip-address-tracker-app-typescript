@@ -1,7 +1,7 @@
-import { IPIFY_KEY } from "./env.js";
+import { IP_API_KEY } from "./env.js";
 
 class IpAddressLocator {
-	#apiBasicUrl = `https://geo.ipify.org/api/v2/country,city?apiKey=${IPIFY_KEY}`;
+	#apiBasicUrl = `https://api.ipgeolocation.io/ipgeo?apiKey=${IP_API_KEY}`;
 
 	// Displayed when request fails to be sent on some browsers because of the CORS policy
 	#API_UNREACHABLE_ERROR_MESSAGE = `Oops! There was an error.\nPlease check your internet connection is working, then try opening the app in another browser or in incognito mode.`;
@@ -24,7 +24,7 @@ class IpAddressLocator {
 	 */
 	async getLocationInfo(search = "") {
 		try {
-			const response = await fetch(`${this.#apiBasicUrl}&ipAddress=${search}`);
+			const response = await fetch(`${this.#apiBasicUrl}&ip=${search}`);
 
 			const data = await response.json();
 
