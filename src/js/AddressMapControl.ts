@@ -1,7 +1,5 @@
 import L from "leaflet";
 
-console.log(L);
-
 /**
  * A wrapper around Leaftet's L class.
  * Controls the map element. Displays the marker and centers the map on first load.
