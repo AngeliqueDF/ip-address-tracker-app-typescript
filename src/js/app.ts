@@ -23,13 +23,12 @@ export type IpAddressData = {
  * Inserts information received from the IP Geolocation API in the table and updates the map.
  */
 const displayData = async (ipAddress = "") => {
-	let data: IpAddressData;
-	data = await locator.getIpAddressInfo(ipAddress);
+	let data: IpAddressData = await locator.getIpAddressInfo(ipAddress);
 
 	// Populate the ".search + table" element with the relevant data
 	infoDisplay.populateTable(data);
 
-	// Update the map so it displays the new location
+	// Update the map so it displays the new location and moves the marker to it
 	appMap.updateMap([data.latitude, data.longitude]);
 };
 
