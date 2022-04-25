@@ -46,6 +46,23 @@ window.addEventListener("DOMContentLoaded", async () => {
 		const search = e.target["searchedAddress"].value;
 		let ipAddress = search;
 
-		displayData(ipAddress);
+		// The field is empty the API will return information about the client.
+		if (search === "") {
+			return displayData();
+		} else {
+			// Otherwise we use the search input to rerender the app, if it is valid.
+			const domainLocator = new DomainNameLocator();
+			if (domainLocator.isValidDomain(search)) {
+				const ipFromDomain = await domainLocator.getIpFromDomain();
+
+				if (ipFromDomain) {
+					ipAddress = ipFromDomain.query;
+				} else {
+					// Stops the code execution a valid IP address from the domain searched wasn't found.
+					return;
+				}
+			}
+			displayData(ipAddress);
+		}
 	});
 });
