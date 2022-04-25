@@ -1,9 +1,15 @@
+import { IpAddressData } from "./app";
+
+/**
+ * Using a utility type to omit the fields not needed in PopulateTable.
+ */
+type TableData = Omit<IpAddressData, "latitude" | "longitude">;
+
 class PopulateTable {
 	/**
 	 * Populates the table with data received from the APIs.
-	 * @param {Object} data
 	 */
-	populateTable(data) {
+	populateTable(data: TableData) {
 		const { ip, isp, city, district, zipcode, time_zone } = data;
 
 		/**
