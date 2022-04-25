@@ -35,7 +35,7 @@ const displayData = async (ipAddress = "") => {
 
 window.addEventListener("DOMContentLoaded", async () => {
 	/**
-	 * Locates and displays the information found on the client when the page is first loaded.
+	 * Locates and displays the information found about the client when the page is first loaded.
 	 */
 	displayData();
 
