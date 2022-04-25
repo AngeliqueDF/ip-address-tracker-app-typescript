@@ -1,28 +1,28 @@
 {
-  "name": "ip-address-tracker-main",
-  "version": "1.0.0",
-  "description": "![Design preview for the IP address tracker coding challenge](./design/desktop-preview.jpg)",
-  "source": "src/index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run build && parcel serve index.html",
-    "dev": "parcel",
-    "build": "parcel build --dist-dir ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AngeliqueDF/ip-address-tracker-challenge.git"
-  },
-  "author": "Angélique D. Faye",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/AngeliqueDF/ip-address-tracker-challenge/issues"
-  },
-  "homepage": "https://github.com/AngeliqueDF/ip-address-tracker-challenge#readme",
-  "devDependencies": {
-    "parcel": "^2.3.2"
-  },
-  "dependencies": {
-    "leaflet": "^1.7.1"
-  }
+	"name": "ip-address-tracker-main",
+	"version": "1.0.0",
+	"description": "![Design preview for the IP address tracker coding challenge](./design/desktop-preview.jpg)",
+	"source": "src/index.html",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "npx parcel src/index.html",
+		"dev": "parcel dist/index.html"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/AngeliqueDF/ip-address-tracker-challenge.git"
+	},
+	"author": "Angélique D. Faye",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/AngeliqueDF/ip-address-tracker-challenge/issues"
+	},
+	"homepage": "https://github.com/AngeliqueDF/ip-address-tracker-challenge#readme",
+	"dependencies": {
+		"leaflet": "^1.7.1"
+	},
+	"devDependencies": {
+		"@types/leaflet": "^1.7.9",
+		"parcel": "^2.4.1"
+	}
 }
