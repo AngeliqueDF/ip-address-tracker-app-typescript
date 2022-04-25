@@ -23,10 +23,10 @@ class PopulateTable {
 
 		/**
 		 * Selects an element in the DOM and inserts matching data into it.
-		 * @param {*} idSelector - HTML element selected by its id
-		 * @param {*} elementData - Data from the API response
+		 * @param {*} idSelector - document.getElementById() argument.
+		 * @param {*} elementData - Data from the API response to insert in the element.
 		 */
-		const displayDataInDOM = (idSelector, elementData) => {
+		const displayDataInDOM = (idSelector: string, elementData: string) => {
 			const element = document.getElementById(idSelector);
 			element.textContent = elementData;
 		};
