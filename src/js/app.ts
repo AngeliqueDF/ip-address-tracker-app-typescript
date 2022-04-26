@@ -20,7 +20,8 @@ export type IpAddressData = {
 };
 
 /**
- * Inserts information received from the IP Geolocation API in the table and updates the map.
+ * Locates and displays the information found about the client.
+ * Called when the page is first loaded.
  */
 const displayData = async (ipAddress = "") => {
 	let data: IpAddressData = await locator.getIpAddressInfo(ipAddress);
@@ -33,9 +34,6 @@ const displayData = async (ipAddress = "") => {
 };
 
 window.addEventListener("DOMContentLoaded", async () => {
-	/**
-	 * Locates and displays the information found about the client when the page is first loaded.
-	 */
 	displayData();
 
 	const searchElement = document.querySelector(".search");
