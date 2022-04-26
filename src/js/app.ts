@@ -43,7 +43,6 @@ window.addEventListener("DOMContentLoaded", async () => {
 		e.preventDefault();
 
 		const search = e.target["searchedAddress"].value;
-		let ipAddress = search;
 
 		// If the field is empty, the value of ip in the URL is === "", therefore the API will return information about the client.
 		if (search === "") {
@@ -61,13 +60,9 @@ window.addEventListener("DOMContentLoaded", async () => {
 
 				// Check we received a truthy value
 				if (ipFromDomain) {
-					ipAddress = ipFromDomain.query;
-				} else {
-					// Stops the code execution a valid IP address from the domain searched wasn't found.
-					return;
+					displayData(ipFromDomain);
 				}
 			}
-			displayData(ipAddress);
 		}
 	});
 });
