@@ -43,7 +43,7 @@ _Locate any IP address or domain name!_
 2. `cd MY-FOLDER-NAME`
 3. `npm install`
 4. `npm start`
-5. visit `http://localhost:1234`
+5. visit [`http://localhost:1234`](http://localhost:1234)
 
 ### If you encounter a CORS error.
 
