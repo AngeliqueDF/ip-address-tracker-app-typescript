@@ -1,109 +1,186 @@
-# Frontend Mentor - IP address tracker
+# IP address tracker app
 
-![Design preview for the IP address tracker coding challenge](./design/desktop-preview.jpg)
+![Screenshot of the IP address tracker app on desktop.](./src/images/screenshot-desktop.png)
 
-## Welcome! 👋
+<div align="center">
+  <img src="./src/images/logo-html5.svg">
+  <img src="./src/images/logo-css3.svg">
+  <img width="48px" src="./src/images/logo-typescript.svg">
+</div>
 
-Thanks for checking out this front-end coding challenge.
+## Overview
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+_Locate any IP address or domain name!_
 
-**To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
+<hr />
 
-## The challenge
+<br />
 
-Your challenge is to build out this IP Address Tracker app and get it looking as close to the design as possible. To get the IP Address locations, you'll be using the [IP Geolocation API by IPify](https://geo.ipify.org/). To generate the map, we recommend using [LeafletJS](https://leafletjs.com/).
+## Links
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+<p>
+<a href="https://github.com/AngeliqueDF/ip-address-tracker-challenge">GitHub repo</a>
+ <!-- • <a href="/.github/CONTRIBUTING.md">Live demo </a> -->
+</p>
 
-Your users should be able to:
+## Features
 
-- View the optimal layout for each page depending on their device's screen size
-- See hover states for all interactive elements on the page
-- See their own IP address on the map on the initial page load
-- Search for any IP addresses or domains and see the key information and location
+- Responsive design.
+- Accessible.
+- Locates any IP address and displays its information in a readable table.
 
----
+## Technologies
 
-⚠️ **IMPORTANT** ⚠️: To use the IP Geolocation API by IPify, you'll need to sign up for a free account. You won't need to add any cards details to do this and it's a very quick process. This will generate an API Key for you. Usually, you would be able to restrict your API Key to a specific URL (your own domain). This makes sure that other people can't use your API Key on their own websites. IPify doesn't have this feature, but because you aren't adding your card details, this isn't an issue. **So be sure to only sign up for the free account and DO NOT enter any card details**.
+- HTML
+- CSS
+- TypeScript
+- Leaflet
+- Geolocation APIs (IP-API.com, Ipgeolocation.io)
 
-For the mapping API, we recommend using [LeafletJS](https://leafletjs.com/). It's free to use and doesn't require an API Key. If you decide to use another API, like Google Maps or Mapbox, be sure to secure your API Key. Here are guides for both Google Maps and Mapbox, be sure to read through them thoroughly:
+## How to run the project
 
-- [API Key best practices from Google Developers](https://developers.google.com/maps/api-key-best-practices)
-- [How to use Mapbox securely](https://docs.mapbox.com/help/troubleshooting/how-to-use-mapbox-securely/)
+1. `git clone HTTPS_REPO_URL MY-FOLDER-NAME`
+2. `cd MY-FOLDER-NAME`
+3. `npm install`
+4. `npm start`
+5. visit [`http://localhost:1234`](http://localhost:1234)
 
-Exposing your API Key publicly can lead to other people using it to make requests for their own application if the proper precautions aren't in place. Please be sure you read the guides thoroughly and follow their recommendations.
+### If you encounter a CORS error.
 
-**We don't take any responsibility if you expose your API Key while completing the challenge and have not secured it.**
+On localhost, some browsers will block the request to the geolocation APIs and throw a [CORS error](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors/CORSDidNotSucceed).
 
----
+#### Workarounds
 
-Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
+- Use a browser in incognito mode to test the app (worked in Chrome, Firefox Developer Edition).
+- Check an ad blocker isn't preventing the requests.
 
-## Where to find everything
+## Description
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+This app is an IP address tracker built with HTML, CSS, and TypeScript. It is a challenge created by Frontend Mentor.
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+> Your users should be able to:
+>
+> - View the optimal layout for each page depending on their device's screen size
+> - See hover states for all interactive elements on the page
+> - See their own IP address on the map on the initial page load
+> - Search for any IP addresses or domains and see the key information and location
+>
+> -- [IP Address tracker challenge by Frontend Mentor](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0)
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+<br />
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+### How I built this project
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+<p align="center">
+	<img alt="Screenshot of the IP address tracker app on mobile." width="33%" src="./src/images/screenshot-mobile.png" />
+</p>
 
-## Building your project
+#### HTML/CSS
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+1. First built the UI with a mobile first approach. The design has two breakpoints: at 375px and 1440px. See the [style guide](./style-guide.md).
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+#### TypeScript
 
-## Deploying your project
+The code uses OOP:
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
+- Request information to the geolocation APIs with `IpAddressLocator.ts` and `DomainNameLocator.ts`.
+- Populate the table with `PopulateTable.ts`.
+- Integrate Leaflet with `AddressMapControl.ts`.
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+<br />
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+### What I learned
 
-## Create a custom `README.md`
+At first, I tried to solve this challenge using a fast approach combining loops, global variables and a few functions.
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+But it became clear that a robust solution needed to be inspired from OOP concepts, where separate objects are responsible for simple tasks and send each other data if needed.
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+I implemented the classes, then called their `public` methods in `app.ts` when a `'submit'` or `'DOMContentLoaded'` event occurred.
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+```js
+// app.ts
+"use-strict";
+import IpAddressLocator from "./IpAddressLocator";
+import AddressMapControl from "./AddressMapControl";
+import PopulateTable from "./PopulateTable";
+import DomainNameLocator from "./DomainNameLocator";
 
-## Submitting your solution
+const appMap = new AddressMapControl();
+const locator = new IpAddressLocator();
+const infoDisplay = new PopulateTable();
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+export type IpAddressData = {
+	// ...
+};
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+/**
+ * Locates and displays the information found about the client.
+ * Called when the page is first loaded.
+ */
+const displayData = async (ipAddress = "") => {
+	// ...
+};
 
-## Sharing your solution
+window.addEventListener("DOMContentLoaded", async () => {
+	displayData();
+	// ...
+	searchElement.addEventListener("submit", async function (e) {
+		// ...
 
-There are multiple places you can share your solution:
+		// If the field is empty, the value of ip in the URL is === "", therefore the API will return information about the client.
+		if (search === "") {
+			return displayData();
+		} else {
+			// Check the domain has a matching IP address
+			// ...
+			// Verify we received a truthy value after the check
+			if (ipFromDomain) {
+				displayData(ipFromDomain);
+			}
+		}
+	});
+});
+```
 
-1. Share your solution page in the **#finished-projects** channel of the [Slack community](https://www.frontendmentor.io/slack). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+Doing this, I avoided:
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+- Writing extra code just to create new tiles/layers for the map and then having to clean up after every search.
+- Writing my own, potentially buggy code by taking advantage of the classes already available.
+- Having one large code file which would have made debugging more difficult.
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+<br />
 
-## Got feedback for us?
+### Recommended technologies and tools
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
+- VS Code type hints.
+- TypeScript.
+- The Leaflet library.
+- IP-API.com to get a domain's IP.
+- ipgeolocation.io to get any IP address information needed by the app.
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
+<br />
 
-**Have fun building!** 🚀
+## Status
+
+The app works. But I am still reviewing the code.
+
+### Planned changes
+
+- [x] Make the app work when the user searches a domain name.
+
+<!-- [See the advancement of the project here. PRs welcome!]() -->
+
+## Sources
+
+- [IP Address Tracker by Frontend Mentor.](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0)
+
+## Useful references
+
+- https://onestepcode.com/leaflet-markers-svg-icons/
+- Leaflet's documentation.
+
+## Author
+
+- [@AngeliqueDF on GitHub.](https://github.com/AngeliqueDF)
+- [Visit my website.](https://adf.dev)
+- [View my Frontend Mentor profile.](https://www.frontendmentor.io/profile/AngeliqueDF)
