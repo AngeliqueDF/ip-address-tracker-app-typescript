@@ -19,3 +19,4 @@ env.js
 .cache
 .parcel-cache
 dist/
+.env
