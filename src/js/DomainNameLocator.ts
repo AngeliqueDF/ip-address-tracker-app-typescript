@@ -27,7 +27,7 @@ class DomainNameLocator {
 	}
 
 	/**
-	 * Queries the IP-API.com API to get an IP address from a domain.
+	 * Finds the IP address of a domain.
 	 * Displays an alert if the IP failed to process the search entry.
 	 */
 	async getIpFromDomain() {
@@ -40,7 +40,9 @@ class DomainNameLocator {
 				alert(
 					`Oops! There was an error with the search: ${jsonResponse.message} "${this.domainSearch}".`
 				);
-				return jsonResponse;
+
+				// Return a falsy value because the request failed: the searched domain didn't match with any IP address
+				return null;
 			}
 
 			return jsonResponse;
