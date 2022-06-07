@@ -12,8 +12,6 @@
 
 _Locate any IP address or domain name!_
 
-<hr />
-
 <br />
 
 ## Links
@@ -23,19 +21,7 @@ _Locate any IP address or domain name!_
  <!-- • <a href="/.github/CONTRIBUTING.md">Live demo </a> -->
 </p>
 
-## Features
-
-- Responsive design.
-- Accessible.
-- Locates any IP address and displays its information in a readable table.
-
-## Technologies
-
-- HTML
-- CSS
-- TypeScript
-- Leaflet
-- Geolocation APIs (IP-API.com, Ipgeolocation.io)
+<br />
 
 ## How to run the project
 
@@ -53,6 +39,24 @@ On localhost, some browsers will block the request to the geolocation APIs and t
 
 - Use a browser in incognito mode to test the app (worked in Chrome, Firefox Developer Edition).
 - Check an ad blocker isn't preventing the requests.
+
+<br />
+
+## Features
+
+- Responsive design.
+- Accessible.
+- Locates any IP address and displays its information in a readable table.
+
+## Technologies
+
+- HTML
+- CSS
+- TypeScript
+- Leaflet
+- Geolocation APIs (IP-API.com, Ipgeolocation.io)
+
+<br />
 
 ## Description
 
@@ -81,21 +85,15 @@ This app is an IP address tracker built with HTML, CSS, and TypeScript. It is a 
 
 #### TypeScript
 
-The code uses OOP:
+At first, I tried to solve this challenge using a fast approach combining loops, global variables and a few functions.
+
+But it became clear that a robust solution needed to be inspired from OOP concepts, where separate objects are responsible for simple tasks and interact if needed.
+
+I implemented the following classes, then called their `public` methods in `app.ts` when a `'submit'` or `'DOMContentLoaded'` event occurred:
 
 - Request information to the geolocation APIs with `IpAddressLocator.ts` and `DomainNameLocator.ts`.
 - Populate the table with `PopulateTable.ts`.
 - Integrate Leaflet with `AddressMapControl.ts`.
-
-<br />
-
-### What I learned
-
-At first, I tried to solve this challenge using a fast approach combining loops, global variables and a few functions.
-
-But it became clear that a robust solution needed to be inspired from OOP concepts, where separate objects are responsible for simple tasks and send each other data if needed.
-
-I implemented the classes, then called their `public` methods in `app.ts` when a `'submit'` or `'DOMContentLoaded'` event occurred.
 
 ```js
 // app.ts
@@ -148,6 +146,8 @@ Doing this, I avoided:
 - Writing my own, potentially buggy code by taking advantage of the classes already available.
 - Having one large code file which would have made debugging more difficult.
 
+I also managed to make this app functional for free.
+
 <br />
 
 ### Recommended technologies and tools
@@ -176,8 +176,8 @@ The app works. But I am still reviewing the code.
 
 ## Useful references
 
-- https://onestepcode.com/leaflet-markers-svg-icons/
-- Leaflet's documentation.
+- [Display a custom marker](https://onestepcode.com/leaflet-markers-svg-icons/)
+- [Leaflet's documentation](https://leafletjs.com/).
 
 ## Author
 
