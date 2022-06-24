@@ -33,7 +33,11 @@ class DomainNameLocator {
 	async getIpFromDomain(): Promise<string> {
 		const requestUrl = `${this.apiBasicUrl}/${this.domainSearch}`;
 		try {
-			const response = await fetch(requestUrl);
+			const response = await fetch(requestUrl, {
+				headers: {
+					"Content-Type": "application/json",
+				},
+			});
 			const jsonResponse = await response.json();
 
 			if (jsonResponse.status === "fail") {
