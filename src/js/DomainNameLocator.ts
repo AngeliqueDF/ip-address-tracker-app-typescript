@@ -6,7 +6,7 @@ class DomainNameLocator {
 	 * Finds the IP address of a domain.
 	 * Displays an alert if the IP failed to process the search entry.
 	 */
-	async getIpFromDomain(): Promise<string> {
+	async getIpFromDomain(search: string): Promise<string | undefined> {
 		try {
 			const response = await fetch(requestUrl);
 			const jsonResponse = await response.json();
