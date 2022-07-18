@@ -2,28 +2,6 @@
  * Validates the searched domain and finds a matching IP address.
  */
 class DomainNameLocator {
-
-	/**
-	 * Validates the search is a domain name using the `URL()` constructor.
-	 */
-	isValidDomain(search: string): boolean {
-		const hasProtocol = /^(https?:\/\/)/.test(search);
-
-		/**
-		 * The URL constructor requires the protocol to work. We add it if it was omitted by the user.
-		 */
-		let newUrl = hasProtocol ? search : `https://${search}`;
-
-		const isValidDomain = new URL(newUrl);
-		if (isValidDomain) {
-			// Saving the host property value of the URL instance to find its matching IP address
-			this.domainSearch = isValidDomain.host;
-			return true;
-		} else {
-			return false;
-		}
-	}
-
 	/**
 	 * Finds the IP address of a domain.
 	 * Displays an alert if the IP failed to process the search entry.
