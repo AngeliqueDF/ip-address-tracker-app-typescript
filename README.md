@@ -17,8 +17,7 @@ _Locate any IP address or domain name!_
 ## Links
 
 <p>
-<a href="https://github.com/AngeliqueDF/ip-address-tracker-challenge">GitHub repo</a>
- <!-- • <a href="/.github/CONTRIBUTING.md">Live demo </a> -->
+<a href="https://github.com/AngeliqueDF/ip-address-tracker-challenge">GitHub repo</a> • <a href="https://ip-address-tracker-app-typescript.vercel.app/">Live demo </a> • <a href="https://github.com/AngeliqueDF/ip-address-tracker-microservice/blob/main/README.md">Repository of the backend</a>
 </p>
 
 <br />
