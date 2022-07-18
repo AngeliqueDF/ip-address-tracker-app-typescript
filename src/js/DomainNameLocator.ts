@@ -2,7 +2,6 @@
  * Validates the searched domain and finds a matching IP address.
  */
 class DomainNameLocator {
-	private apiBasicUrl = "http://ip-api.com/json";
 	private domainSearch: string;
 
 	/**
