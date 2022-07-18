@@ -12,20 +12,21 @@ class DomainNameLocator {
 		const requestUrl = DOMAIN_LOCATOR_URL + search;
 		try {
 			const response = await fetch(requestUrl);
-			const jsonResponse = await response.json();
 
-			if (jsonResponse.status === "fail") {
-				alert(
-					`Oops! There was an error with the search: ${jsonResponse.message} "${this.domainSearch}".`
-				);
-
-				// Return a falsy value because the request failed: the searched domain didn't match with any IP address
-				return null;
+			if (response.status === 400) {
+				// If the status code is 400, the search was an IP address.
+				return search;
+			} else {
+				const jsonResponse = await response.json();
+				if (response.status === 404) {
+					// If there was an error with the search (it is invalid), the server returns a status code 404.
+					throw new Error(jsonResponse.message);
+				} else if (response.status === 200) {
+					return jsonResponse.result;
+				}
 			}
-
-			return jsonResponse.query;
 		} catch (error) {
-			console.log(error);
+			console.trace(error);
 		}
 	}
 }
