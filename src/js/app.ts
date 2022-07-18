@@ -46,20 +46,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 		if (search === "") {
 			return displayData();
 		} else {
-			// Otherwise we will use the search input to rerender the app
-			// First, check the input is a valid domain
-			const domainLocator = new DomainNameLocator();
-			if (domainLocator.isValidDomain(search)) {
-				/**
-				 * A valid URL (according to the constructor) doesn't necessarily match with an IP address we can use in the app.
-				 * `ipFromDomain` will be either null (falsy) or an object with the new data to display
-				 */
-				const ipFromDomain = await domainLocator.getIpFromDomain();
 
-				// Check we received a truthy value
-				if (ipFromDomain) {
-					displayData(ipFromDomain);
-				}
 			}
 		}
 	});
