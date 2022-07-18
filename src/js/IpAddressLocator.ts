@@ -1,7 +1,5 @@
-import { IP_API_KEY } from "./env.js";
-
 class IpAddressLocator {
-	private apiBasicUrl = `https://api.ipgeolocation.io/ipgeo?apiKey=${IP_API_KEY}`;
+	private apiBasicUrl = `https://api.ipgeolocation.io/ipgeo?apiKey=${process.env.IP_API_KEY}`;
 	private errorMessages = {
 		// Displayed when request fails to be sent on some browsers because of the CORS policy
 		API_UNREACHABLE_ERROR_MESSAGE: `Oops! There was an error.\nPlease check your internet connection is working, then try opening the app in another browser or in incognito mode.`,
