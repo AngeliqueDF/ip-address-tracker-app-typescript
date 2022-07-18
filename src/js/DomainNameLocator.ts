@@ -1,3 +1,5 @@
+import { DOMAIN_LOCATOR_URL } from "./env.js";
+
 /**
  * Validates the searched domain and finds a matching IP address.
  */
@@ -7,6 +9,7 @@ class DomainNameLocator {
 	 * Displays an alert if the IP failed to process the search entry.
 	 */
 	async getIpFromDomain(search: string): Promise<string | undefined> {
+		const requestUrl = DOMAIN_LOCATOR_URL + search;
 		try {
 			const response = await fetch(requestUrl);
 			const jsonResponse = await response.json();
