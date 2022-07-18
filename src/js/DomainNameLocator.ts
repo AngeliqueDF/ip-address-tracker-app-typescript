@@ -2,7 +2,6 @@
  * Validates the searched domain and finds a matching IP address.
  */
 class DomainNameLocator {
-	private domainSearch: string;
 
 	/**
 	 * Validates the search is a domain name using the `URL()` constructor.
@@ -30,7 +29,6 @@ class DomainNameLocator {
 	 * Displays an alert if the IP failed to process the search entry.
 	 */
 	async getIpFromDomain(): Promise<string> {
-		const requestUrl = `${this.apiBasicUrl}/${this.domainSearch}`;
 		try {
 			const response = await fetch(requestUrl);
 			const jsonResponse = await response.json();
