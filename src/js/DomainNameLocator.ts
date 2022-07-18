@@ -2,52 +2,32 @@
  * Validates the searched domain and finds a matching IP address.
  */
 class DomainNameLocator {
-	private apiBasicUrl = "http://ip-api.com/json";
-	private domainSearch: string;
-
-	/**
-	 * Validates the search is a domain name using the `URL()` constructor.
-	 */
-	isValidDomain(search: string): boolean {
-		const hasProtocol = /^(https?:\/\/)/.test(search);
-
-		/**
-		 * The URL constructor requires the protocol to work. We add it if it was omitted by the user.
-		 */
-		let newUrl = hasProtocol ? search : `https://${search}`;
-
-		const isValidDomain = new URL(newUrl);
-		if (isValidDomain) {
-			// Saving the host property value of the URL instance to find its matching IP address
-			this.domainSearch = isValidDomain.host;
-			return true;
-		} else {
-			return false;
-		}
-	}
-
 	/**
 	 * Finds the IP address of a domain.
 	 * Displays an alert if the IP failed to process the search entry.
 	 */
-	async getIpFromDomain(): Promise<string> {
-		const requestUrl = `${this.apiBasicUrl}/${this.domainSearch}`;
+	async getIpFromDomain(search: string): Promise<string | undefined> {
+		const requestUrl =
+			(process.env.DOMAIN_LOCATOR_URL || "http://localhost:5000/api?search=") +
+			search;
+
 		try {
 			const response = await fetch(requestUrl);
-			const jsonResponse = await response.json();
 
-			if (jsonResponse.status === "fail") {
-				alert(
-					`Oops! There was an error with the search: ${jsonResponse.message} "${this.domainSearch}".`
-				);
-
-				// Return a falsy value because the request failed: the searched domain didn't match with any IP address
-				return null;
+			if (response.status === 400) {
+				// If the status code is 400, the search was an IP address.
+				return search;
+			} else {
+				const jsonResponse = await response.json();
+				if (response.status === 404) {
+					// If there was an error with the search (it is invalid), the server returns a status code 404.
+					throw new Error(jsonResponse.message);
+				} else if (response.status === 200) {
+					return jsonResponse.result;
+				}
 			}
-
-			return jsonResponse.query;
 		} catch (error) {
-			console.log(error);
+			console.trace(error);
 		}
 	}
 }
