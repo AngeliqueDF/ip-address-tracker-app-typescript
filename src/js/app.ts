@@ -46,7 +46,13 @@ window.addEventListener("DOMContentLoaded", async () => {
 		if (search === "") {
 			return displayData();
 		} else {
+			// Otherwise, the search can be either an IP address, a domain name, or neither (an invalid input).
+			const domainLocator = new DomainNameLocator();
+			const isIpAddress = await domainLocator.getIpFromDomain(search);
 
+			// If the result is NOT undefined, we can call the IP geolocation API by providing it as a parameter.
+			if (isIpAddress) {
+				displayData(isIpAddress);
 			}
 		}
 	});
