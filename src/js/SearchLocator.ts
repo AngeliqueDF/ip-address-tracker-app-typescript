@@ -1,11 +1,15 @@
 class SearchLocator {
-	async getSearchData(search: string) {
-		const requestUrl =
-			(process.env.DOMAIN_LOCATOR_URL || "http://localhost:5000/api?search=") +
-			search;
+	private serverBaseUrl = process.env.SERVER_API_URL;
+	private externalApiBaseUrl = process.env.EXTERNAL_API_URL;
 
+	async getSearchData(search: string = "") {
 		try {
-			const response = await fetch(requestUrl);
+			let response;
+			if (search === "") {
+				response = await fetch(this.externalApiBaseUrl);
+			} else {
+				response = await fetch(this.serverBaseUrl + search);
+			}
 			const data = await response.json();
 			return data;
 		} catch (error) {
