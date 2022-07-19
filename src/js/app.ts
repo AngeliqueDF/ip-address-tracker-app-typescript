@@ -51,5 +51,8 @@ window.addEventListener("DOMContentLoaded", async () => {
 		const search = e.target["searchedAddress"].value;
 
 		// If the field is empty, the value of ip in the URL is === "", therefore the API will return information about the client.
+		if (search === "") displayData();
+		// Otherwise, the search can be either an IP address, a domain name, or neither (an invalid input). The server will process the search input and return a response used in displayData
+		displayData(search);
 	});
 });
