@@ -22,23 +22,23 @@ export type IpAddressData = {
  * Locates and displays the information found about the client.
  * Called when the page is first loaded.
  */
-const displayData = async (ipAddress = "") => {
-	let json = await searchLocator.getSearchData(ipAddress);
+const displayData = async (search = "") => {
+	let json = await searchLocator.getSearchData(search);
 
-	// If json.data is undefined, it means there was a problem processing the request. There's no need to keep executing the function, hence the return statement. An alert is also displayed to inform the user.
-	if (!json.data) return alert(json.message);
+	// If json is undefined, it means there was a problem processing the request. There's no need to keep executing the function, hence the return statement. An alert is also displayed to inform the user.
+	if (!json) return alert(json.message || "Could not locate this search.");
 
 	// Populate the ".search + table" element with the relevant data
 	infoDisplay.populateTable({
-		ip: json.data.ip,
-		isp: json.data.isp,
-		city: json.data.city,
-		district: json.data.district,
-		zipcode: json.data.zipcode,
-		time_zone: json.data.time_zone,
+		ip: json.ip,
+		isp: json.isp,
+		city: json.city,
+		district: json.district,
+		zipcode: json.zipcode,
+		time_zone: json.time_zone,
 	});
 	// Update the map so it displays the new location and moves the marker to point to it
-	appMap.updateMap([json.data.latitude, json.data.longitude]);
+	appMap.updateMap([json.latitude, json.longitude]);
 };
 
 window.addEventListener("DOMContentLoaded", async () => {
