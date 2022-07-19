@@ -1,11 +1,10 @@
 "use-strict";
-import IpAddressLocator from "./IpAddressLocator";
+import SearchLocator from "./SearchLocator";
 import AddressMapControl from "./AddressMapControl";
 import PopulateTable from "./PopulateTable";
-import DomainNameLocator from "./DomainNameLocator";
 
 const appMap = new AddressMapControl();
-const locator = new IpAddressLocator();
+const searchLocator = new SearchLocator();
 const infoDisplay = new PopulateTable();
 
 export type IpAddressData = {
@@ -24,13 +23,22 @@ export type IpAddressData = {
  * Called when the page is first loaded.
  */
 const displayData = async (ipAddress = "") => {
-	let data: IpAddressData = await locator.getIpAddressInfo(ipAddress);
+	let json = await searchLocator.getSearchData(ipAddress);
+
+	// If json.data is undefined, it means there was a problem processing the request. There's no need to keep executing the function, hence the return statement. An alert is also displayed to inform the user.
+	if (!json.data) return alert(json.message);
 
 	// Populate the ".search + table" element with the relevant data
-	infoDisplay.populateTable(data);
-
-	// Update the map so it displays the new location and moves the marker to it
-	appMap.updateMap([data.latitude, data.longitude]);
+	infoDisplay.populateTable({
+		ip: json.data.ip,
+		isp: json.data.isp,
+		city: json.data.city,
+		district: json.data.district,
+		zipcode: json.data.zipcode,
+		time_zone: json.data.time_zone,
+	});
+	// Update the map so it displays the new location and moves the marker to point to it
+	appMap.updateMap([json.data.latitude, json.data.longitude]);
 };
 
 window.addEventListener("DOMContentLoaded", async () => {
@@ -43,17 +51,8 @@ window.addEventListener("DOMContentLoaded", async () => {
 		const search = e.target["searchedAddress"].value;
 
 		// If the field is empty, the value of ip in the URL is === "", therefore the API will return information about the client.
-		if (search === "") {
-			return displayData();
-		} else {
-			// Otherwise, the search can be either an IP address, a domain name, or neither (an invalid input).
-			const domainLocator = new DomainNameLocator();
-			const isIpAddress = await domainLocator.getIpFromDomain(search);
-
-			// If the result is NOT undefined, we can call the IP geolocation API by providing it as a parameter.
-			if (isIpAddress) {
-				displayData(isIpAddress);
-			}
-		}
+		if (search === "") displayData();
+		// Otherwise, the search can be either an IP address, a domain name, or neither (an invalid input). The server will process the search input and return a response used in displayData
+		displayData(search);
 	});
 });
