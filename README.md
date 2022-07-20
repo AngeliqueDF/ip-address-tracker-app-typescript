@@ -85,9 +85,7 @@ This app is an IP address tracker built with HTML, CSS, and TypeScript. It is a 
 
 #### TypeScript
 
-At first, I tried to solve this challenge using a fast approach combining loops, global variables and a few functions.
-
-But it became clear that a robust solution needed to be inspired from OOP concepts, where separate objects are responsible for simple tasks and interact if needed.
+When planning this project, it became clear that a robust solution needed to be inspired from OOP concepts, where separate objects are responsible for simple tasks and interact if needed. TypeScript helped as it simplified the implementation of classes (for example, it allows the use of keyword that don’t exist in JavaScript, such as private).
 
 I implemented the following classes, then called their `public` methods in `app.ts` when a `'submit'` or `'DOMContentLoaded'` event occurred:
 
