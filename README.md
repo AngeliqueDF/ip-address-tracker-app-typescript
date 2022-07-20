@@ -91,9 +91,9 @@ But it became clear that a robust solution needed to be inspired from OOP concep
 
 I implemented the following classes, then called their `public` methods in `app.ts` when a `'submit'` or `'DOMContentLoaded'` event occurred:
 
-- Request information to the geolocation APIs with `IpAddressLocator.ts` and `DomainNameLocator.ts`.
-- Populate the table with `PopulateTable.ts`.
-- Integrate Leaflet with `AddressMapControl.ts`.
+- Request information to the geolocation API with `SearchLocator`.
+- Populate the table with `PopulateTable`.
+- Integrate Leaflet with `AddressMapControl`.
 
 ```js
 // app.ts
