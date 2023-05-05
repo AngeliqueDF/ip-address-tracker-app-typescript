@@ -30,17 +30,6 @@ _Locate any IP address or domain name!_
 4. `npm start`
 5. visit [`http://localhost:1234`](http://localhost:1234)
 
-### If you encounter a CORS error.
-
-On localhost, some browsers will block the request to the geolocation APIs and throw a [CORS error](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors/CORSDidNotSucceed).
-
-#### Workarounds
-
-- Use a browser in incognito mode to test the app (worked in Chrome, Firefox Developer Edition).
-- Check an ad blocker isn't preventing the requests.
-
-<br />
-
 ## Features
 
 - Responsive design.
