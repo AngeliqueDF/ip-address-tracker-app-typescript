@@ -1,4 +1,4 @@
-# IP address tracker app
+# IP address tracker app (frontend)
 
 ![Screenshot of the IP address tracker app on desktop.](./src/images/screenshot-desktop.png)
 
